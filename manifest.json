@@ -1,0 +1,41 @@
+{
+  "skill": "automation2app",
+  "published_layout": "skills/automation2app",
+  "package_fingerprint_sha256": "8705b135ff73702d9ee3f9a7cc2862911cee163dee49f4867b68b6e72b527722",
+  "fingerprint_algorithm": "sha256 of sorted UTF-8 lines relative_path + NUL + sha256(file_bytes) + LF",
+  "original_installed_package_fingerprint_sha256": "5eba5aca5c4d2d2b69eb7d934b1c43af16f4967b9be55bb5fb14645f8110d63c",
+  "editorial_delta": "harness-adaptation.md: status/provenance only; other five resources identical",
+  "resources": {
+    "SKILL.md": {
+      "sha256": "35d5754af878c507359ae49c475a62b9a064b4d774f1fac6f8a5e4e6725e2d7b",
+      "bytes": 6798,
+      "identical_to_original_installed_resource": true
+    },
+    "agents/openai.yaml": {
+      "sha256": "4c80d98d1ca6bde025ebb10fdf0142942e32dcd295189feee71f7ca2db36bd06",
+      "bytes": 279,
+      "identical_to_original_installed_resource": true
+    },
+    "assets/project-adoption.md": {
+      "sha256": "27baf7810044afabcb5b5d07dd9236f38b801884803119c99404dde574172142",
+      "bytes": 2792,
+      "identical_to_original_installed_resource": true
+    },
+    "references/agent-skills-integration.md": {
+      "sha256": "ff1a5d6405a7b4855f31b4ace3042bfa02c941ebcd2d6910ebeabb6c83eaef4f",
+      "bytes": 4623,
+      "identical_to_original_installed_resource": true
+    },
+    "references/harness-adaptation.md": {
+      "sha256": "e47de5e91c0c4864ef7155eae6940a1a920c825cd20a655571a80455af144e72",
+      "bytes": 11166,
+      "identical_to_original_installed_resource": false
+    },
+    "references/operation-contract.md": {
+      "sha256": "c33b5d50cd680d0cdc1101296ebe2088079f750400ebfd7ce554bea295582f89",
+      "bytes": 6559,
+      "identical_to_original_installed_resource": true
+    }
+  },
+  "runtime_verified": false
+}

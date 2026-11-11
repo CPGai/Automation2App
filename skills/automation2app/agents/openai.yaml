@@ -1,0 +1,4 @@
+interface:
+  display_name: "Automation2App"
+  short_description: "Convierte automatizaciones en apps operables"
+  default_prompt: "Usa $automation2app para preparar, integrar o validar la conversión de una automatización en una aplicación según su fase y alcance aprobados."

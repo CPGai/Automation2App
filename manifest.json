@@ -1,41 +1,22 @@
 {
-  "skill": "automation2app",
-  "published_layout": "skills/automation2app",
-  "package_fingerprint_sha256": "8705b135ff73702d9ee3f9a7cc2862911cee163dee49f4867b68b6e72b527722",
-  "fingerprint_algorithm": "sha256 of sorted UTF-8 lines relative_path + NUL + sha256(file_bytes) + LF",
-  "original_installed_package_fingerprint_sha256": "5eba5aca5c4d2d2b69eb7d934b1c43af16f4967b9be55bb5fb14645f8110d63c",
-  "editorial_delta": "harness-adaptation.md: status/provenance only; other five resources identical",
+  "package": "Automation2App.V2",
+  "version": "2.0.0-rc.1",
+  "algorithm": "SHA-256 of each distributed resource (Git blob content, LF)",
   "resources": {
-    "SKILL.md": {
-      "sha256": "35d5754af878c507359ae49c475a62b9a064b4d774f1fac6f8a5e4e6725e2d7b",
-      "bytes": 6798,
-      "identical_to_original_installed_resource": true
-    },
-    "agents/openai.yaml": {
-      "sha256": "4c80d98d1ca6bde025ebb10fdf0142942e32dcd295189feee71f7ca2db36bd06",
-      "bytes": 279,
-      "identical_to_original_installed_resource": true
-    },
-    "assets/project-adoption.md": {
-      "sha256": "27baf7810044afabcb5b5d07dd9236f38b801884803119c99404dde574172142",
-      "bytes": 2792,
-      "identical_to_original_installed_resource": true
-    },
-    "references/agent-skills-integration.md": {
-      "sha256": "ff1a5d6405a7b4855f31b4ace3042bfa02c941ebcd2d6910ebeabb6c83eaef4f",
-      "bytes": 4623,
-      "identical_to_original_installed_resource": true
-    },
-    "references/harness-adaptation.md": {
-      "sha256": "e47de5e91c0c4864ef7155eae6940a1a920c825cd20a655571a80455af144e72",
-      "bytes": 11166,
-      "identical_to_original_installed_resource": false
-    },
-    "references/operation-contract.md": {
-      "sha256": "c33b5d50cd680d0cdc1101296ebe2088079f750400ebfd7ce554bea295582f89",
-      "bytes": 6559,
-      "identical_to_original_installed_resource": true
-    }
-  },
-  "runtime_verified": false
+    "skills/automation2app/agents/openai.yaml": "4c80d98d1ca6bde025ebb10fdf0142942e32dcd295189feee71f7ca2db36bd06",
+    "skills/automation2app/assets/project-adoption.md": "27baf7810044afabcb5b5d07dd9236f38b801884803119c99404dde574172142",
+    "skills/automation2app/references/agent-skills-integration.md": "f7cb6ed6e5c898a1c24ab11de0ff1dd63c9bf6a317e0878b792f2604ca94b75e",
+    "skills/automation2app/references/harness-adaptation.md": "e47de5e91c0c4864ef7155eae6940a1a920c825cd20a655571a80455af144e72",
+    "skills/automation2app/references/operation-contract.md": "c33b5d50cd680d0cdc1101296ebe2088079f750400ebfd7ce554bea295582f89",
+    "skills/automation2app/SKILL.md": "9442591f36e35a54f7b5bce00ef401e226fd2dfcc412098b3e10dee6c05a8e8e",
+    "skills/design-md/agents/openai.yaml": "7282b825a08b720d8e62963d62412b3cd6ed8bef39dd294d90a9c8d1e682a0b2",
+    "skills/design-md/references/capture-brand.md": "98257d50f7405d9ff31a59466be8ac831914792531dbf85f21b3e63241236089",
+    "skills/design-md/SKILL.md": "09756bf9203e4be5d64ca1aac6f4b3ef47a2c254ebb7e3b925688ba94c218e5b",
+    "skills/frontend-design/LICENSE.txt": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+    "skills/frontend-design/SKILL.md": "ec255320a2ec99bb8a57354cb562c976d6249527450f3e282612d7f6ba888e4a",
+    "skills/progressive-webui-workflow/references/skill-collaboration.md": "33898841800b089bbfca39feacc2fe40c625fd5b7a4304640677523cb589c0c3",
+    "skills/progressive-webui-workflow/SKILL.md": "b49530a6646f30b8263da566425431685e6707190bc69614d690a574a667cc02",
+    "agents/frontend-design-agent.md": "51e6b63e01ed002f54d8f4ca201c431f5a20526a5d9d16895dfa5717cafb50bc",
+    "templates/PROGRESSIVE_UI_RULE_TEMPLATE.md": "17b5f5f571b416481db1a90ad6f84d07234cd31e29ee1a2eee737237820fa95d"
+  }
 }

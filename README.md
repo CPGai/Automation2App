@@ -1,85 +1,41 @@
-# Automation2App
+# Automation2App.V2
 
-Skill para preparar, integrar y validar la conversión de automatizaciones o CLI
-en aplicaciones operables mediante Web UI local y, cuando se apruebe,
-asistencia conversacional.
+**Versión candidata `v2.0.0-rc.1`.** Cuatro skills de agente para convertir una automatización existente en una aplicación local, diseñar su interfaz y verificar las tareas que podrá realizar la persona usuaria. Quien prepara la aplicación elige la skill de entrada según la tarea.
 
-Complementa [Agent Skills de Addy Osmani](https://github.com/addyosmani/agent-skills).
-El framework se instala y comprueba por separado; este repositorio distribuye
-Automation2App y su documentación.
-
-## Modos
-
-| Modo | Resultado |
+| Quiero… | Empiezo por |
 | --- | --- |
-| Preparación | Incorporar requisitos desde especificación y planeación, sin construir la UI |
-| Integración | Conectar una capacidad cuya automatización y tarea estén validadas/aprobadas |
-| Validación | Comprobar recorridos, contratos, permisos y fallos con evidencia |
+| Preparar una conversión, integrar una capacidad aprobada o validar sus operaciones | [Automation2App](skills/automation2app/SKILL.md) |
+| Organizar controles, decisiones, estados de error y recuperación | [Progressive WebUI Workflow](skills/progressive-webui-workflow/SKILL.md) |
+| Documentar o aplicar la identidad visual aprobada del proyecto | [Design.md](skills/design-md/SKILL.md) |
+| Dar dirección visual a una interfaz dentro de esa identidad | [Frontend Design](skills/frontend-design/SKILL.md) |
 
-CLI, web y chat comparten operaciones y autorización. El modelo del producto
-propone llamadas tipadas; el backend confiable valida y autoriza. Se conserva
-HITL para acciones consecuenciales. No se incluye servidor, chatbot, CLI de
-producto ni selección predeterminada de proveedor o framework web.
+Por ejemplo, al convertir un generador de reportes en una aplicación, Automation2App identifica el destino del archivo y cuándo pedir confirmación para sobrescribir. Progressive sitúa esa decisión en el recorrido. Design.md aporta las reglas visuales aprobadas y Frontend Design puede aplicarlas al formulario y al resultado. Cada colaboración depende del trabajo pendiente. [Acuerdo entre las cuatro skills](skills/progressive-webui-workflow/references/skill-collaboration.md)
 
-## Contenido
+## Probar la candidata
 
-- [Skill y selección de modo](skills/automation2app/SKILL.md).
-- [Integración con Agent Skills](skills/automation2app/references/agent-skills-integration.md).
-- [Contrato operativo y N1/N2/N3](skills/automation2app/references/operation-contract.md).
-- [Guía de adaptación](skills/automation2app/references/harness-adaptation.md).
-- [Plantilla de adopción](skills/automation2app/assets/project-adoption.md).
-- [Especificación](docs/SPEC-Automation2App-v0.1.md).
-- [Validación, procedencia y límites](docs/VALIDATION.md).
-- [Huellas del paquete](manifest.json).
+Descarga el código fuente de [la versión candidata](https://github.com/CPGai/Automation2App/releases/tag/v2.0.0-rc.1) y extrae el archivo, o clona la etiqueta en una carpeta nueva:
 
-## Instalación local
-
-Revisar primero las instrucciones y ubicaciones admitidas por la versión del
-anfitrión. Instalar este skill es una decisión separada de adoptarlo en un
-proyecto o autorizar operaciones de una aplicación.
-
-Clonar el repositorio o descargar sus archivos. Copiar la carpeta completa
-`skills/automation2app`, conservando sus seis recursos, en el directorio de
-skills elegido. No copiar el repositorio completo dentro de la carpeta del skill.
-
-| Anfitrión examinado | Destino de usuario | Invocación que debe comprobarse |
-| --- | --- | --- |
-| Codex local | `~/.codex/skills/automation2app/` | `$automation2app` |
-| Antigravity | `~/.gemini/config/skills/automation2app/` | Invocación por nombre o `/automation2app`, según superficie/version |
-| Otro anfitrión o computadora | Descubrir destino y mecanismo reales | Validar con la guía de adaptación |
-
-Ejemplo PowerShell para Codex, ejecutado desde la raíz de esta copia:
-
-```powershell
-$skillDestination = Join-Path $env:USERPROFILE '.codex\skills\automation2app'
-if (Test-Path -LiteralPath $skillDestination) { throw 'El destino ya existe; comparar antes de reemplazar.' }
-New-Item -ItemType Directory -Path (Split-Path -Parent $skillDestination) -Force | Out-Null
-Copy-Item -LiteralPath '.\skills\automation2app' -Destination $skillDestination -Recurse
+```shell
+git clone --branch v2.0.0-rc.1 --depth 1 https://github.com/CPGai/Automation2App.git Automation2App-rc1
 ```
 
-Para Antigravity, usar como destino `.gemini\config\skills\automation2app`
-bajo el perfil de usuario. `agents/openai.yaml` es metadato de Codex, conservado
-en el paquete; no le otorga autoridad sobre otros anfitriones.
+1. Para una primera prueba, abre la copia en tu agente y selecciona un `SKILL.md` de la tabla por su ruta. Puedes probarla con la solicitud de abajo.
+2. Para instalar el conjunto en un proyecto con Codex, copia las cuatro carpetas completas de `skills/` en `.agents/skills/` del proyecto. Si ya existe una con el mismo nombre, compara las versiones antes de reemplazarla. Abre una sesión nueva y comprueba qué ruta carga el agente al invocar el nombre. Design.md admite invocación explícita mediante `$design-md`.
+3. En otro anfitrión, comprueba su mecanismo de carga y la ruta efectiva. El [agente de revisión](agents/frontend-design-agent.md) y la [plantilla de reglas](templates/PROGRESSIVE_UI_RULE_TEMPLATE.md) son recursos opcionales del repositorio.
 
-Después comprobar por separado: hashes/estructura, presencia en catálogo,
-carga por nombre y comportamiento documental. Una carpeta presente no acredita
-descubrimiento. El agente debe declarar capacidades o procesos ausentes.
-
-## Uso y adopción
-
-Indicar la intención y la fase del proyecto al invocar Automation2App. Leer el
-estado desde la especificación, plan y tracker existentes. La plantilla de
-adopción se incorpora a la especificación canónica tras aprobación; no crea
-un segundo backlog ni modifica Agent Skills o reglas globales automáticamente.
-
-Para comprobar solo disponibilidad:
+Solicitud de prueba desde la copia descargada:
 
 ```text
-Usa automation2app solo para comprobar que puedes resolverlo por nombre.
-Indica su ruta de carga, sus tres modos y recursos. No modifiques archivos,
-no adoptes el patrón y no inicies una aplicación ni un piloto.
+Lee skills/automation2app/SKILL.md y usa el modo Preparación. Tengo una CLI local
+que genera un reporte con datos ficticios y puede sobrescribir el archivo de
+destino. ¿Qué necesita saber la persona antes de confirmar? Documenta el
+recorrido y las decisiones pendientes. Detente antes de implementar la interfaz.
 ```
 
-La validación del skill documental no prueba la seguridad o funcionalidad de
-un backend real. El proyecto adoptante debe ejecutar sus propios recorridos y
-pruebas de autorización. Ver el alcance exacto en [VALIDATION.md](docs/VALIDATION.md).
+## Alcance y procedencia
+
+- La [especificación original](docs/SPEC-Automation2App-v0.1.md) y el [contrato operativo](skills/automation2app/references/operation-contract.md) describen los modos de trabajo y la autorización en el backend. El paquete distribuye instrucciones para el agente desarrollador.
+- Las pruebas con ejemplos ficticios y sus límites se resumen en [Validación](docs/VALIDATION.md). El [manifiesto](manifest.json) identifica los recursos del paquete por SHA-256.
+- Progressive adapta el [framework de CPGai](https://github.com/CPGai/Frontend-Design-Progressive-WebUI-Framework). Design.md es un procedimiento del proyecto que puede trabajar con la [especificación y CLI de Google](https://github.com/google-labs-code/design.md). La CLI es una dependencia opcional para las tareas que la necesiten.
+- Frontend Design adapta la [skill de Anthropic](https://github.com/anthropics/skills/tree/main/skills/frontend-design) y conserva su [licencia Apache 2.0](skills/frontend-design/LICENSE.txt). La adaptación documenta la colaboración con las otras skills.
+- Automation2App también puede colaborar con [Agent Skills de Addy Osmani](https://github.com/addyosmani/agent-skills). Quien necesite la edición pública anterior de una sola skill puede consultar su [revisión fijada](https://github.com/CPGai/Automation2App/tree/4fd5a5da3fada6a3e876af4b1b786fc5e746b694).

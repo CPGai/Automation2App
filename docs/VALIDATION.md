@@ -1,4 +1,17 @@
-# Validación y límites
+# Validación de Automation2App.V2
+
+## Candidata v2.0.0-rc.1
+
+| Evaluación | Resultado observado | Alcance |
+| --- | --- | --- |
+| Progressive original y candidata | Tres escenarios ejecutados con ambas versiones, 30/30 comprobaciones funcionales y 24 combinaciones de pantalla y tamaño | Ambas versiones pasaron. Los resultados corresponden a ejemplos ficticios. |
+| Las cuatro candidatas | Cuatro ejercicios con una skill de entrada distinta en cada uno, 18/18 comprobaciones funcionales y 16 combinaciones de pantalla y tamaño | Se seleccionaron las copias por ruta. Se ejercitaron una exportación local, una calculadora, una muestra de identidad pendiente de aprobación y una interfaz con integración pendiente. |
+
+En los ejercicios se observó si las skills respetaban la identidad aprobada, los permisos, la confirmación de efectos y la capacidad real del backend. Una comprobación de la exportación requirió ampliar el criterio del evaluador para reconocer un mensaje válido de resultado incierto. La interfaz evaluada conservó su contenido.
+
+Para distribuir la candidata se conservó la guía pública de adaptación de Automation2App y se añadió la atribución de la modificación de Frontend Design. El manifiesto identifica los archivos distribuidos. La selección automática entre instalaciones del mismo nombre, la operación en otros anfitriones y la aceptación de usuarios finales requieren comprobación en cada proyecto.
+
+## Antecedentes de la edición de una sola skill
 
 Fecha de observación: 11 de noviembre de 2026.
 

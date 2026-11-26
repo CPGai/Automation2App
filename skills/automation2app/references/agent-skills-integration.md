@@ -15,13 +15,18 @@ La base de diseño se examinó con Agent Skills 0.6.15. Es una referencia de int
 | Definir frontera | Operaciones tipadas y consumidores comunes | api-and-interface-design |
 | Planear | Dependencias, tareas diferidas y evidencia de preparación | planning-and-task-breakdown |
 | Construir | Corte aprobado por capacidad, pruebas relevantes | incremental-implementation / test-driven-development |
-| UI | Recorrido, estados, accesibilidad y adaptación visual | frontend-ui-engineering |
+| Interacción UI | Recorrido, jerarquía, controles y verificación del uso | progressive-webui-workflow |
+| Identidad visual | Reutilizar, definir o validar DESIGN.md según la tarea | design-md |
+| Dirección visual | Composición y lenguaje dentro de la identidad aprobada | frontend-design |
+| Implementación UI | Componentes, estados y accesibilidad en el stack existente | frontend-ui-engineering |
 | Seguridad | Autorización, entrada, puente local y secretos | security-and-hardening |
 | Proveedores | Mecanismos admitidos y fuentes oficiales fechadas | source-driven-development |
 | Navegador | Uso real, resultados y fallos | browser-testing-with-devtools o alternativa disponible declarada |
 | Revisar/entregar | Revisión, paquete y lanzamiento autorizado | code-review-and-quality / shipping-and-launch |
 
 Leer solo procesos pertinentes. Seguir las puertas aplicables de especificación y plan; no convertir esta tabla en una ejecución automática de todos los skills. Si un skill cambia de nombre o no existe, registrar la brecha y proponer equivalencia sin afirmar que fue invocado.
+
+Para una tarea UI, entregar al colaborador pertinente la capacidad y el alcance aprobados, recorrido, contrato de operaciones, permisos, estados y aceptación. Reutilizar identidad y diseño vigentes; definir marca o ejecutar la CLI de diseño solo si esa tarea lo necesita. Las observaciones vuelven al responsable de la tarea y a las fuentes canónicas indicadas abajo, con pantalla/capacidad, versión o huellas, criterio afectado y brecha o evidencia. Retomar solo el punto afectado sin reinvocar en bucle al skill que entregó el trabajo. Un colaborador de diseño no redefine operaciones, permisos o alcance; una tarea visual ajena a conversiones no adopta Automation2App automáticamente.
 
 ## Fuentes canónicas
 

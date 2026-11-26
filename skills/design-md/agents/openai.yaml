@@ -1,0 +1,6 @@
+interface:
+  display_name: "Design MD"
+  short_description: "Captura marcas y aplica su diseño por proyecto"
+  default_prompt: "Usa $design-md para capturar o aplicar la identidad visual de este proyecto con la CLI de Google."
+policy:
+  allow_implicit_invocation: false

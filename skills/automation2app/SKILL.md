@@ -50,6 +50,10 @@ Reutilizar operaciones comunes para CLI, web y chat. Mantener UI y asistente com
 
 Integrar un corte por capacidad con los skills pertinentes. No exigir terminar toda la automatización para integrar una capacidad lista. Cambios arquitectónicos, permisos o alcance nuevos requieren decisión HITL antes de actuar.
 
+Para la UI autorizada, usar `progressive-webui-workflow` cuando esté disponible: entregar capacidad, recorrido, contrato operativo, permisos, estados y criterios de aceptación. Reutilizar el DESIGN.md aprobado; `design-md` conserva o valida la identidad y `frontend-design` desarrolla la dirección visual dentro de ella. Mantener `frontend-ui-engineering` como apoyo de implementación. Resolver colaboradores por nombre y capacidades reales, sin imponer stack, CLI de diseño ni una nueva captura de marca.
+
+Recibir sus hallazgos y evidencia en la especificación/tracker vigentes, sin reiniciar modos, repetir aprobaciones cubiertas ni duplicar planes. La preparación de diseño puede identificar brechas; la conexión al runtime sigue sujeta a las condiciones de integración de este skill. El responsable de la tarea retoma solo el punto afectado: los enlaces entre skills no son llamadas recursivas ni autorizan una fase nueva.
+
 ## Validación
 
 - Vincular evidencia a versión/huellas, entorno y tarea. Verificar recorridos reales y resultados; una captura de pantalla no prueba ejecución.
